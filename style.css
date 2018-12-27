@@ -1,0 +1,81 @@
+@font-face {
+    font-family: silkscreen;
+    src: url('fonts/slkscr.ttf');
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url('images/space_background.png');
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+
+#gameCanvas {
+    height: 100%;
+}
+
+#playerScore, #enemyScore, #copyright {
+    position: absolute;
+    color: greenyellow;
+    font-size: 1.5em;
+    font-family: 'silkscreen', 'Courier New', Courier, monospace;
+}
+
+#copyright {
+    text-align: center;
+    width: 250px;
+    font-size: 1.1em;
+    bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+#playerScore {
+    left: 200px;
+}
+
+#enemyScore {
+    right: 200px;
+}
+
+#startButton {
+    padding: 20px;
+    width: 650px;
+    height: 150px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 200px;
+}
+
+
+#startButton:hover{
+    border: 2px solid greenyellow;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 460px){
+
+    #startButton{
+        padding: 2px;
+        width: 280px;
+        height: 70px;
+    }
+    #playerScore {
+        left: 30px;
+    }
+    
+    #enemyScore {
+        right: 30px;
+    }
+}
