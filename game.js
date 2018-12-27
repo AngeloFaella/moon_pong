@@ -70,23 +70,23 @@ window.onload = () => {
     const mobile = window.matchMedia( "(min-width: 460px)" );
     
     if(! tablet.matches){ 
-          // swipe event listener
-          canvas.addEventListener('touchmove', evt => {
-            evt.preventDefault();
-            let position = evt.touches[0].pageY;
-            playerY = position;
-        });
-    }
+        // swipe event listener
+        canvas.addEventListener('touchmove', evt => {
+          evt.preventDefault();
+          let position = evt.touches[0].pageY;
+          playerY = position;
+      });
+  }
 
-    if(! mobile.matches){ 
-        // resize for phones
-        PADDLE_HEIGHT /= 2.5;
-        PADDLE_WIDTH /= 2.5;
-        ballSize /= 2.5;
-        speedX /= 3.5;
-        START_SPEED_Y /= 3.5;
-        MARGIN /= 2.5;
-        enemySpeed /= 1.5;
+  if(! mobile.matches){ 
+      // resize for phones
+      PADDLE_HEIGHT /= 2.5;
+      PADDLE_WIDTH /= 2.5;
+      ballSize /= 2.5;
+      speedX /= 3.5;
+      START_SPEED_Y /= 3.5;
+      MARGIN /= 2.5;
+      enemySpeed /= 1.5;
     }
 
     // start game
