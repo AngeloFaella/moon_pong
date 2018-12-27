@@ -79,7 +79,7 @@ window.onload = () => {
     }
 
     if(! mobile.matches){ 
-        //resize
+        // resize for phones
         PADDLE_HEIGHT /= 2.5;
         PADDLE_WIDTH /= 2.5;
         ballSize /= 2.5;
