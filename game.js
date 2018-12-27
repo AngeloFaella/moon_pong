@@ -65,16 +65,20 @@ window.onload = () => {
         playerY = position.y;
     });
 
-    // media query (mobile)
-    const mq = window.matchMedia( "(min-width: 460px)" );
-    if(! mq.matches){ 
-        // swipe event listener
-        canvas.addEventListener('touchmove', evt => {
+    // media queries
+    const tablet = window.matchMedia( "(min-width: 1025px)" )
+    const mobile = window.matchMedia( "(min-width: 460px)" );
+    
+    if(! tablet.matches){ 
+          // swipe event listener
+          canvas.addEventListener('touchmove', evt => {
             evt.preventDefault();
             let position = evt.touches[0].pageY;
             playerY = position;
         });
+    }
 
+    if(! mobile.matches){ 
         //resize
         PADDLE_HEIGHT /= 2.5;
         PADDLE_WIDTH /= 2.5;
