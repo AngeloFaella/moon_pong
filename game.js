@@ -193,7 +193,7 @@ function draw(){
     
     // draw ball
     if(fireShot){
-        canvasContext.drawImage(fireballImg, ballX, ballY, ballSize+20, ballSize+20);
+        canvasContext.drawImage(fireballImg, ballX, ballY, ballSize + MARGIN*2, ballSize + MARGIN*2);
     }else {
         canvasContext.drawImage(ballImg, ballX, ballY, ballSize, ballSize);
     }
