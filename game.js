@@ -64,18 +64,20 @@ window.onload = () => {
     // media query (mobile)
     const mq = window.matchMedia( "(min-width: 460px)" );
     if(! mq.matches){ 
-        // window width is less than 460px
-        // canvas.addEventListener('touchmove', evt => {
-        //     let position = mousePosition(evt);
-        //     playerY = position.y;
-        // });
-        // resize
-        PADDLE_HEIGHT /= 2;
-        PADDLE_WIDTH /= 2;
-        ballSize /= 2;
-        speedX /= 2;
-        START_SPEED_Y /=2;
-        MARGIN /= 2;
+        // swipe event listener
+        canvas.addEventListener('touchmove', evt => {
+            evt.preventDefault();
+            let position = evt.touches[0].pageY;
+            playerY = position;
+        });
+
+        //resize
+        PADDLE_HEIGHT /= 2.5;
+        PADDLE_WIDTH /= 2.5;
+        ballSize /= 2.5;
+        speedX /= 2.5;
+        START_SPEED_Y /=2.5;
+        MARGIN /= 2.5;
     }
 
     // start game
@@ -226,7 +228,7 @@ function ballReset(){
         enemyLabel.innerHTML = enemyScore;
         playerLabel.innerHTML = playerScore;
     } else {
-        setTimeout(start, 400);    
+        setTimeout(start, 500);    
     }
 
 }

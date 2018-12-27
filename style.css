@@ -72,10 +72,10 @@ body {
         height: 70px;
     }
     #playerScore {
-        left: 30px;
+        left: 65px;
     }
     
     #enemyScore {
-        right: 30px;
+        right: 65px;
     }
 }
