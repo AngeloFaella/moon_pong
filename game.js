@@ -2,7 +2,7 @@ let canvas;
 let canvasContext;
 
 let ballSize = 25;
-let ballX = 350;
+let ballX = 0;
 let speedX = 11;
 let ballY = 250;
 let START_SPEED_Y = 4
@@ -43,6 +43,10 @@ window.onload = () => {
     enemyLabel = document.getElementById('enemyScore');
     authorLink = document.getElementById('af_link');
 
+    // ball init position
+    ballX = canvas.width / 2;
+    ballY = canvas.height / 2;
+
     // create images
     spaceImg = new Image();
     spaceImg.src = 'images/space_background.png';
@@ -75,8 +79,8 @@ window.onload = () => {
         PADDLE_HEIGHT /= 2.5;
         PADDLE_WIDTH /= 2.5;
         ballSize /= 2.5;
-        speedX /= 2.5;
-        START_SPEED_Y /=2.5;
+        speedX /= 3.5;
+        START_SPEED_Y /= 3.5;
         MARGIN /= 2.5;
     }
 
