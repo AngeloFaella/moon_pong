@@ -82,6 +82,7 @@ window.onload = () => {
         speedX /= 3.5;
         START_SPEED_Y /= 3.5;
         MARGIN /= 2.5;
+        enemySpeed /= 1.5;
     }
 
     // start game
@@ -125,6 +126,8 @@ function move(){
         return;
     }
 
+    let edge = 0.4 * PADDLE_HEIGHT;
+
     // ball vertical bounce 
     if(ballY >= canvas.height - MARGIN*2 || ballY <= MARGIN) speedY = -speedY;
     
@@ -135,7 +138,7 @@ function move(){
             // fire shot
             let deltaY = ballY - (enemyY + PADDLE_HEIGHT/2);
 
-            if(Math.abs(deltaY) > 40) fireShot = true;
+            if(Math.abs(deltaY) > edge) fireShot = true;
             else fireShot = false;
 
             speedY = deltaY * 0.35;
@@ -153,7 +156,7 @@ function move(){
             // fire shot
             let deltaY = ballY - (playerY + PADDLE_HEIGHT/2);
 
-            if(Math.abs(deltaY) > 30) fireShot = true;
+            if(Math.abs(deltaY) > edge) fireShot = true;
             else fireShot = false;
 
             speedY = deltaY * 0.35;
@@ -168,9 +171,10 @@ function move(){
 
 function moveEnemy(){
     let center = enemyY + (PADDLE_HEIGHT/2);
-    if(center < ballY - 35)
+    let edge = 0.35 * PADDLE_HEIGHT;
+    if(center < ballY -  edge)
         enemyY += enemySpeed
-    else if(center > ballY + 35)
+    else if(center > ballY + edge)
         enemyY -= enemySpeed
 }
 
@@ -210,7 +214,7 @@ function drawNet(){
 function ballReset(){
     // reset
     speedX = -speedX;
-    speedY = -START_SPEED_Y + Math.floor(Math.random()*10);
+    speedY = -START_SPEED_Y + Math.floor(Math.random() * MARGIN);
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
     fireShot = false;
@@ -223,8 +227,10 @@ function ballReset(){
         let src = 'images/lost_screen.png';
         if(playerScore == WINNING_SCORE) src = 'images/win_screen.png';
         startButton.src = src;
-        startButton.style.visibility = 'visible';
-        authorLink.style.visibility = 'visible';
+        startButton.onload = () => {
+            startButton.style.visibility = 'visible';
+            authorLink.style.visibility = 'visible';
+        }
 
         // reset scores
         playerScore = 0;
