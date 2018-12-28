@@ -8,7 +8,11 @@
 - **Tip**: Hit the ball with the edge of the spaceship shield to get a "*fire shot*"
 
 ## Try it
-[Play Moon Pong here](https://angelofaella.github.io/moon_pong/)
+[Play Moon Pong here](https://angelofaella.github.io/moon_pong/).
+<br/>Testsd on :
+- Chrome
+- Firefox
+- Edge
 
 ## Authors
 * **Angelo Faella** - [AngeloFaella](https://github.com/AngeloFaella)
